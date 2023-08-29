@@ -1,0 +1,115 @@
+:root {
+    --foreground-color: #ffffff;
+    --foreground-color-alt: #c2b2c8;
+    --background-color: #110411;
+  }
+  
+  body {
+    font-family: "Consolas", monospace;
+    color: var(--foreground-color);
+    background-color: var(--background-color);
+    padding: 10px;
+    line-height: 1.6;
+    font-size: 1.6rem;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1.6rem;
+    display: block;
+    border-bottom: 6px double var(--foreground-color);
+    font-weight: bold;
+  }
+  
+  p {
+    margin-top: 0px;
+  }
+  
+  a {
+    margin: 0;
+    color: var(--foreground-color);
+  }
+  
+  a[href*="//"]:not([href*="philipp panhey"]:not([href*=".philipp panhey"])):after
+  {
+    content: " ↪";
+  }
+  
+  a:hover,
+  a:active {
+    background: var(--foreground-color);
+    color: var(--background-color);
+  }
+  
+  ul {
+    list-style-type: square;
+    list-style-position: outside;
+    margin-left: 1.6rem;
+  }
+  
+  li {
+    margin-bottom: 0;
+  }
+  
+  img {
+    max-width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px dashed var(--foreground-color);
+  }
+  
+  code {
+    padding: 10px;
+    border: 1px solid var(--foreground-color);
+    background: var(--background-color);
+    display: inline-block;
+  }
+  
+  hr {
+    border-color: var(--foreground-color);
+    border-style: dashed;
+    margin: 1.6rem 0;
+  }
+  
+  figure {
+    margin: 0;
+  }
+  
+  .no-v-margin {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+  }
+  
+  .container:after,
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .skip {
+    float: right;
+  }
+  
+  .content {
+    margin: 20px 0;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .container {
+      margin: auto;
+    }
+  }
+  
+  @media screen and (max-width: 680px) {
+    code {
+      display: none;
+    }
+  }
