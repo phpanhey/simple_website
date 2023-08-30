@@ -12,6 +12,9 @@ fi
 # Transfer index.html
 scp index.html ${REMOTE_SERVER_USER}@${REMOTE_SERVER_IP}:${REMOTE_SERVER_DIR}
 
+# Transfer favicon
+scp favicon.ico ${REMOTE_SERVER_USER}@${REMOTE_SERVER_IP}:${REMOTE_SERVER_DIR}
+
 # Transfer css/ directory
 scp -r css/ ${REMOTE_SERVER_USER}@${REMOTE_SERVER_IP}:${REMOTE_SERVER_DIR}
 
