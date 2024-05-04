@@ -5,7 +5,7 @@ FROM nginx:latest
 COPY . /usr/share/nginx/html
 
 # Copy SSL certificates and private key
-COPY yourdomain.key /etc/ssl/private/philipp-panhey.key
+COPY philipp-panhey.key /etc/ssl/private/philipp-panhey.key
 COPY chained.crt /etc/ssl/certs/chained.crt
 
 # Copy custom Nginx config
