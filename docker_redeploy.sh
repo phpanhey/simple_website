@@ -13,4 +13,4 @@ docker stop philipp-panhey-de || true
 docker rm philipp-panhey-de || true
 
 # Run the new Docker container
-docker run -d --name philipp-panhey-de -p 80:80 -p 443:443 philipp-panhey-de
+docker run -d --restart always --name philipp-panhey-de -p 80:80 -p 443:443 philipp-panhey-de
