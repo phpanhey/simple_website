@@ -48,7 +48,7 @@
         </footer>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                fetch('data/events.json')
+                fetch('events.json')
                     .then(response => response.json())
                     .then(events => {
                         const eventsList = document.getElementById('events-list');
