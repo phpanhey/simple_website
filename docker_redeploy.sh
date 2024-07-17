@@ -13,4 +13,4 @@ docker stop philipp-panhey-de || true
 docker rm philipp-panhey-de || true
 
 # Run the new Docker container
-docker run -d --restart always --name philipp-panhey-de -p 80:80 -p 443:443 -v $(pwd)/../EventParser/events.json:/usr/share/nginx/html/events.json philipp-panhey-de
+docker run -d --restart always --name philipp-panhey-de -p 80:80 -p 443:443 -v $(pwd)/../EventParser/events.json:/usr/share/nginx/html/data/events.json philipp-panhey-de
