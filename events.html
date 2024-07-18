@@ -87,10 +87,19 @@
                             });
                         };
     
-                        displayEvents(events);
+                        // Load the last selected category from localStorage
+                        const lastSelectedCategory = localStorage.getItem('selectedCategory');
+                        if (lastSelectedCategory) {
+                            categorySelect.value = lastSelectedCategory;
+                        }
+    
+                        const selectedCategory = categorySelect.value;
+                        const filteredEvents = selectedCategory === 'all' ? events : events.filter(event => event.category === selectedCategory);
+                        displayEvents(filteredEvents);
     
                         categorySelect.addEventListener('change', () => {
                             const selectedCategory = categorySelect.value;
+                            localStorage.setItem('selectedCategory', selectedCategory);
                             const filteredEvents = selectedCategory === 'all' ? events : events.filter(event => event.category === selectedCategory);
                             displayEvents(filteredEvents);
                         });
