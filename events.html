@@ -3,7 +3,20 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="~ppp - Events today. Quickly view happenings from various websites in one place. With the Event-Aggregator.">
+    <meta name="description"
+        content="~ppp today's events: blazingly fast and brutally simple (bfbs), aggregated from multiple sources.">
+    <meta property="og:title" content="Today's Events - Blazingly fast and brutally simple">
+    <meta property="og:description"
+        content="~ppp today's events: blazingly fast and brutally simple (bfbs), aggregated from multiple sources.">
+    <meta property="og:url" content="https://philipp-panhey.de/events.html">
+    <meta property="og:image" content="https://philipp-panhey.de/img/philipp_panhey_painted.svg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="a guy with a moustache.">
+    <meta name="twitter:title" content="Today's Events - Blazingly fast and brutally simple">
+    <meta name="twitter:description"
+        content="Blazingly fast and brutally simple event list, aggregated from varied sources.">
+    <meta name="twitter:image" content="https://philipp-panhey.de/img/philipp_panhey_painted.svg">
+
     <meta name="robots" content="noindex">
     <title>philipp panhey portfolio ~ppp</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -25,7 +38,13 @@
             <div class="eight columns">
                 <div class="content">
                     <h1 id="title">Events TODAY</h1>
-                    <p class="intro">This project aggregates events happening today, parsed from various local websites in my area, providing a single source to view them all. It is designed for personal use, offering a quick and comprehensive overview of local happenings. You are welcome to contribute to the project here: <a href="https://github.com/phpanhey/EventParser">EventParser on GitHub</a>.</p>
+                    <p>~ppp today's events: blazingly fast and brutally simple (bfbs), aggregated from multiple sources.
+                    </p>
+                    <p class="intro">This project aggregates events happening today, parsed from various local websites
+                        in my area, providing a single source to view them all. It is designed for personal use,
+                        offering a quick and comprehensive overview of local happenings. You are welcome to contribute
+                        to the project here: <a href="https://github.com/phpanhey/EventParser">EventParser on
+                            GitHub</a>.</p>
                     <select class="intro" id="category-select">
                         <option value="all">All Categories</option>
                     </select>
@@ -58,18 +77,18 @@
                         const eventsList = document.getElementById('events-list');
                         const categorySelect = document.getElementById('category-select');
                         const categories = new Set();
-    
+
                         events.forEach(event => {
                             categories.add(event.category);
                         });
-    
+
                         categories.forEach(category => {
                             const option = document.createElement('option');
                             option.value = category;
                             option.textContent = category;
                             categorySelect.appendChild(option);
                         });
-    
+
                         const displayEvents = (filteredEvents) => {
                             eventsList.innerHTML = '';
                             filteredEvents.forEach(event => {
@@ -86,17 +105,17 @@
                                 eventsList.appendChild(eventItem);
                             });
                         };
-    
+
                         // Load the last selected category from localStorage
                         const lastSelectedCategory = localStorage.getItem('selectedCategory');
                         if (lastSelectedCategory) {
                             categorySelect.value = lastSelectedCategory;
                         }
-    
+
                         const selectedCategory = categorySelect.value;
                         const filteredEvents = selectedCategory === 'all' ? events : events.filter(event => event.category === selectedCategory);
                         displayEvents(filteredEvents);
-    
+
                         categorySelect.addEventListener('change', () => {
                             const selectedCategory = categorySelect.value;
                             localStorage.setItem('selectedCategory', selectedCategory);
