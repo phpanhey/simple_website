@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script type="text/javascript">
         function reply_click(clicked_id)
         {
@@ -15,13 +16,19 @@
                 "0232" : "Irma, du beschenkst Werner",
                 "2302" : "Werner, du beschenkst Helmut",
                 "0103" : "Helmut, du beschenkst Max",
-                "3231" : "Max, du beschenkst Christine"
-            };
+                "3231" : "Max, du beschenkst Christine",
+                "1233": "Max, du beschenkst Rike.", // ab hier 1 feiertag
+                "1223": "Rike, du beschenkst Philipp.",
+                "1133": "Philipp, du beschenkst CHristoph.",
+                "1273": "Christoph, du beschenkst Natalie.",
+                "1933": "Natalie, du beschenkst Max."
+          };
 
           var pin = document.getElementById('pin').value
           if(s[pin] == undefined){
             alert("Person nicht gefunden.")
           }else{
+            confetti();
             alert("🎅 " + s[pin]);
           }
         }
